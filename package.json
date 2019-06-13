@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generateData": "node ./api/generateData.js",
+    "start:server": "node ./api/index.js",
+    "start:api": "nodemon --config ./api/nodemon.json --exec 'npm-run-all --serial generateData start:server'",
+    "start": "npm-run-all -p start:api serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,12 +16,21 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "babel-eslint": "^10.0.1",
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "chance": "^1.0.18",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "express": "^4.17.1",
+    "json-schema-faker": "^0.5.0-rc17",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

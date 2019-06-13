@@ -1,29 +1,20 @@
-# vuex-shopping-cart
+# Sample VueJS + Vuex Shopping Cart 😋
 
-## Project setup
-```
-npm install
-```
+## What?
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is a sample VueJS + Vuex application in which a user can browse through a products catalog and purchase the desired items.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Why?
 
-### Run your tests
-```
-npm run test
-```
+This is intended to serve as a way for recruiters to assess my skills when it comes to VueJS. This solution is just a rough draft of a shopping cart and **by no means** intended to be taken as a final solution. That considered, I make the following points about it:
 
-### Lints and fixes files
-```
-npm run lint
-```
+1. I will not optimize it for real-life use;
+2. I'm no great shakes as a designer (sorry about that 😞). So don't expect beauty. The real goal is to demonstrate how I organize and code a VueJS projecty as well as implement the basic flow of the application;
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## How?
+
+In order to run the project, just issue an
+
+```
+npm run start
+```
