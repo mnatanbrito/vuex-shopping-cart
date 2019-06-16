@@ -8,7 +8,8 @@ const fs = require('fs');
 const schema = require('./data/schema.json');
 
 jsf.extend('chance', function() {
-  return new Chance();
+  const chance = new Chance();
+  return chance;
 });
 
 console.log(chalk.yellow('Generating fake data...'));

@@ -14,5 +14,5 @@ app.use(basePath, products);
 
 app.listen(process.env.API_PORT || 3001, () => {
   //eslint-disable-next-line
-  console.log(green('Fake api started and ready to rock 😎...'));
+  console.log(green('\nFake api started and ready to rock 😎 ...'));
 });

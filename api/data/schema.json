@@ -23,9 +23,13 @@
               "max": 1000
             }
           }
+        },
+        "category": {
+          "type": "string",
+          "pattern": "Clothes|Eletronics|Household"
         }
       },
-      "required": ["id"]
+      "required": ["id", "category"]
     }
   }
 }

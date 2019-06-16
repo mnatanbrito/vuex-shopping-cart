@@ -1,5 +1,5 @@
 {
   "verbose": true,
-  "ignore": ["data/db.json"],
+  "ignore": ["api/data/db.json", "src"],
   "watch": ["."]
 }
