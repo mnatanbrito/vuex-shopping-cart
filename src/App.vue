@@ -10,10 +10,17 @@
 </style>
 
 <template>
-  <div id="app">
-    <h1>{{ products.isFetching ? 'Fetching data...' : '' }}</h1>
-    <h2>{{ products.hasFetched ? 'Already fecthed data...' : 'Did not fetch data )=' }}</h2>
-    <p>{{ JSON.stringify(products.items) }}</p>
+  <div>
+    <header>
+      <p>HEADER CONTENT HERE</p>
+    </header>
+    <nav>NAVIGATION CONTENT HERE</nav>
+    <main id="app">
+      <section class="main-content">
+        <router-view></router-view>
+      </section>
+    </main>
+    <footer>FOOTER CONTENT HERE</footer>
   </div>
 </template>
 

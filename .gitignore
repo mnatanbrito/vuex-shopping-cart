@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .DS_Store
 node_modules
 /dist
@@ -8,16 +7,13 @@ node_modules
 .env.*.local
 
 # Log files
-=======
 # Logs
 logs
 *.log
->>>>>>> 8aab113ee16bbc0b4b92f023e8e988248200b0e5
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-<<<<<<< HEAD
 # Editor directories and files
 .idea
 .vscode
@@ -26,7 +22,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-=======
 # Runtime data
 pids
 *.pid
@@ -81,4 +76,6 @@ typings/
 
 # next.js build output
 .next
->>>>>>> 8aab113ee16bbc0b4b92f023e8e988248200b0e5
+
+# exclude generated fake data
+api/data/db.json
