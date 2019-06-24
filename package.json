@@ -5,13 +5,14 @@
   "scripts": {
     "generateData": "node ./api/generateData.js",
     "start:server": "node ./api/index.js",
-    "start:api": "nodemon --config ./api/nodemon.json --exec 'npm-run-all --serial generateData start:server'",
+    "start:api": "nodemon --config ./api/nodemon.json --exec \"npm-run-all --serial generateData start:server\"",
     "start": "npm-run-all -p start:api serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@saeris/vue-spinners": "^1.0.8",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
@@ -33,8 +34,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "express": "^4.17.1",
     "json-schema-faker": "^0.5.0-rc17",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

@@ -12,6 +12,7 @@ const state = {
   products: {
     hasFetched: false,
     isFetching: false,
+    filters: [],
     items: []
   }
 };

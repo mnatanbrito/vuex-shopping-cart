@@ -12,7 +12,9 @@ app.use(json());
 const basePath = '/api';
 app.use(basePath, products);
 
-app.listen(process.env.API_PORT || 3001, () => {
+const apiPort = process.env.API_PORT || 3001;
+
+app.listen(apiPort, () => {
   //eslint-disable-next-line
-  console.log(green('\nFake api started and ready to rock 😎 ...'));
+  console.log(green(`\nFake api started and ready to rock on port ${apiPort} 😎 ...`));
 });

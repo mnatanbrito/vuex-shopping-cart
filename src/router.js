@@ -1,11 +1,11 @@
 import VueRouter from 'vue-router';
 
-import ProductCatalog from './components/ProductCatalog.vue';
+import CatalogPage from './components/pages/CatalogPage.vue';
 
 const routes = [
   {
     path: '/catalog',
-    component: ProductCatalog
+    component: CatalogPage
   },
   {
     path: '/',
