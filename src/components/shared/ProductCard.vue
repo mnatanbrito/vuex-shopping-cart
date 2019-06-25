@@ -31,19 +31,23 @@ export default {
 </script>
 
 <style lang="scss">
+$cardWidth: 250px;
+$cardHeight: 250px;
+
 .product {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
-  width: 250px;
-  height: 250px;
-
+  width: $cardWidth;
+  height: $cardHeight;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.3);
+    font-size: inherit;
+    transform: scale(1.2, 1.5);
     cursor: pointer;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   }
 
   .product__discount {

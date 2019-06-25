@@ -11,5 +11,11 @@ export default {
       .catch(error => {
         commit('FETCH_PRODUCTS_FAILED', error);
       });
+  },
+  addItemToCart({ commit }, product) {
+    commit('ADD_ITEM_TO_CART', product);
+  },
+  removeItemFromCart({ commit }, productId) {
+    commit('REMOVE_ITEM_FROM_CART', productId);
   }
 };

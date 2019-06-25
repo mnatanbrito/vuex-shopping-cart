@@ -37,7 +37,7 @@
           "pattern": "Clothes|Eletronics|Household"
         }
       },
-      "required": ["id", "category"]
+      "required": ["id", "name", "category"]
     }
   }
 }

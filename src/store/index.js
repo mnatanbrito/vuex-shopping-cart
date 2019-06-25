@@ -9,6 +9,9 @@ import { createLogger } from './plugins';
 Vue.use(Vuex);
 
 const state = {
+  cart: {
+    items: []
+  },
   products: {
     hasFetched: false,
     isFetching: false,

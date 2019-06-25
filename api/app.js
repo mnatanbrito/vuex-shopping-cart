@@ -16,5 +16,7 @@ const apiPort = process.env.API_PORT || 3001;
 
 app.listen(apiPort, () => {
   //eslint-disable-next-line
-  console.log(green(`\nFake api started and ready to rock on port ${apiPort} 😎 ...`));
+  console.log(
+    green(`\nFake api started and ready to rock on port ${apiPort} 😎\n`)
+  );
 });

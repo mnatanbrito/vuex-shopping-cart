@@ -1,6 +1,6 @@
 <template>
   <div class="product-catalog">
-    <h3>Products</h3>
+    <h3 class="is-title">Products</h3>
     <div class="products-list">
       <div class="products-list__product" v-for="(product, index) in products" :key="index">
         <product-card :product="product"></product-card>

@@ -1,5 +1,5 @@
 <template>
-  <div class="product-catalog">
+  <div class="catalog-page">
     <section :if="products.hasFetched">
       <h3>Product Catalog</h3>
       <loader :show="!products.hasFetched"></loader>
@@ -25,9 +25,8 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-a {
-  color: #42b983;
+<style lang="scss" scoped>
+.catalog-page {
+  margin-bottom: 50px;
 }
 </style>

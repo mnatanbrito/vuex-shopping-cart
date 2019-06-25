@@ -1,4 +1,4 @@
-import { uniq } from 'lodash/array';
+import { uniq, remove } from 'lodash/array';
 
 export default {
   FETCH_PRODUCTS_STARTED(state) {
@@ -19,6 +19,15 @@ export default {
     state.products.hasFetched = true;
     state.products.error = error;
 
+    return state;
+  },
+  ADD_ITEM_TO_CART(state, product) {
+    state.cart.items.push(product);
+
+    return state;
+  },
+  REMOVE_ITEM_FROM_CART(state, productId) {
+    remove(state.cart.items, product => product.id === productId);
     return state;
   }
 };

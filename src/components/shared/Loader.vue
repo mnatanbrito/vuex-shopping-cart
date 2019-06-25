@@ -4,7 +4,6 @@
 
 <script>
 import { BeatLoader } from "@saeris/vue-spinners";
-import { mapState } from "vuex";
 
 export default {
   name: "Loader",

@@ -1,35 +1,30 @@
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
-
 <template>
   <div>
-    <header>
-      <p>HEADER CONTENT HERE</p>
-    </header>
+    <app-header></app-header>
     <nav>NAVIGATION CONTENT HERE</nav>
     <main id="app">
       <section class="main-content">
         <router-view></router-view>
       </section>
     </main>
-    <footer>FOOTER CONTENT HERE</footer>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
 
+import "./styles/CustomStyles.scss";
+
+import AppHeader from "./components/shared/AppHeader.vue";
+import AppFooter from "./components/shared/AppFooter.vue";
+
 export default {
   name: "app",
-  components: {},
+  components: {
+    "app-header": AppHeader,
+    "app-footer": AppFooter
+  },
   methods: {
     ...mapActions(["fetchProducts"])
   },
@@ -38,7 +33,7 @@ export default {
   }),
   mounted() {
     if (!this.products.hasFetched) {
-      this.$store.dispatch("fetchProducts", "Clothes", 0, 10);
+      this.$store.dispatch("fetchProducts", null, 0, 10);
     }
   }
 };
