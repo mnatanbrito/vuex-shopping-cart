@@ -15,8 +15,15 @@ const state = {
   products: {
     hasFetched: false,
     isFetching: false,
-    filters: [],
-    items: []
+    appliedFilters: [],
+    items: [],
+    total: 0
+  },
+  filters: {
+    hasFetched: false,
+    isFetching: false,
+    items: [],
+    total: 0
   }
 };
 

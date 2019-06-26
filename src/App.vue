@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="container is-widescreen">
     <app-header></app-header>
-    <nav>NAVIGATION CONTENT HERE</nav>
-    <main id="app">
+    <app-nav></app-nav>
+    <main>
       <section class="main-content">
         <router-view></router-view>
       </section>
@@ -18,11 +18,13 @@ import "./styles/CustomStyles.scss";
 
 import AppHeader from "./components/shared/AppHeader.vue";
 import AppFooter from "./components/shared/AppFooter.vue";
+import AppNav from "./components/shared/AppNav.vue";
 
 export default {
   name: "app",
   components: {
     "app-header": AppHeader,
+    "app-nav": AppNav,
     "app-footer": AppFooter
   },
   methods: {
@@ -31,9 +33,9 @@ export default {
   computed: mapState({
     products: state => state.products
   }),
-  mounted() {
+  created() {
     if (!this.products.hasFetched) {
-      this.$store.dispatch("fetchProducts", null, 0, 10);
+      this.fetchProducts(null, 0, 10);
     }
   }
 };

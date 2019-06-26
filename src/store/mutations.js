@@ -1,12 +1,19 @@
 import { uniq, remove } from 'lodash/array';
+import {
+  FETCH_PRODUCTS_STARTED,
+  FETCH_PRODUCTS_SUCCEEDED,
+  FETCH_PRODUCTS_FAILED,
+  ADD_ITEM_TO_CART,
+  REMOVE_ITEM_FROM_CART
+} from './mutationTypes';
 
 export default {
-  FETCH_PRODUCTS_STARTED(state) {
+  [FETCH_PRODUCTS_STARTED](state) {
     state.products.isFetching = true;
 
     return state;
   },
-  FETCH_PRODUCTS_SUCCEEDED(state, products) {
+  [FETCH_PRODUCTS_SUCCEEDED](state, products) {
     state.products.isFetching = false;
     state.products.hasFetched = true;
     state.products.items = uniq([...state.products.items, ...products.items]);
@@ -14,19 +21,19 @@ export default {
 
     return state;
   },
-  FETCH_PRODUCTS_FAILED(state, error) {
+  [FETCH_PRODUCTS_FAILED](state, error) {
     state.products.isFetching = false;
     state.products.hasFetched = true;
     state.products.error = error;
 
     return state;
   },
-  ADD_ITEM_TO_CART(state, product) {
+  [ADD_ITEM_TO_CART](state, product) {
     state.cart.items.push(product);
 
     return state;
   },
-  REMOVE_ITEM_FROM_CART(state, productId) {
+  [REMOVE_ITEM_FROM_CART](state, productId) {
     remove(state.cart.items, product => product.id === productId);
     return state;
   }

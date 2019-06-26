@@ -1,8 +1,7 @@
 <template>
   <div class="product-catalog">
-    <h3 class="is-title">Products</h3>
-    <div class="products-list">
-      <div class="products-list__product" v-for="(product, index) in products" :key="index">
+    <div class="products-list columns is-multiline">
+      <div class="products-list__product column" v-for="(product, index) in products" :key="index">
         <product-card :product="product"></product-card>
       </div>
     </div>
@@ -28,14 +27,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.products-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
+// .products-list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+//   justify-content: space-around;
 
-  .products-list__product {
-    flex-grow: 1;
-  }
-}
+//   .products-list__product {
+//     flex-grow: 1;
+//   }
+// }
 </style>
