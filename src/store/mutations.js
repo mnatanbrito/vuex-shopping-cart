@@ -4,7 +4,8 @@ import {
   FETCH_PRODUCTS_SUCCEEDED,
   FETCH_PRODUCTS_FAILED,
   ADD_ITEM_TO_CART,
-  REMOVE_ITEM_FROM_CART
+  REMOVE_ITEM_FROM_CART,
+  SWITCH_PRODUCT_CATALOG_VIEW
 } from './mutationTypes';
 
 export default {
@@ -35,6 +36,10 @@ export default {
   },
   [REMOVE_ITEM_FROM_CART](state, productId) {
     remove(state.cart.items, product => product.id === productId);
+    return state;
+  },
+  [SWITCH_PRODUCT_CATALOG_VIEW](state, viewType) {
+    state.products.viewType = viewType;
     return state;
   }
 };

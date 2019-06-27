@@ -16,9 +16,10 @@ router.get(`${basePath}`, (req, res) => {
   const skip = isNaN(parseInt(req.query.skip)) ? 0 : parseInt(req.query.skip);
   const take = isNaN(parseInt(req.query.take)) ? 10 : parseInt(req.query.take);
 
-  const filteredData = category
-    ? filter(db.products || [], filterProductByCategory(category))
-    : db.products;
+  const filteredData =
+    category && category.length > 0
+      ? filter(db.products || [], filterProductByCategory(category))
+      : db.products;
 
   return res.status(200).json({
     data: {

@@ -13,6 +13,7 @@ const state = {
     items: []
   },
   products: {
+    viewType: 'th',
     hasFetched: false,
     isFetching: false,
     appliedFilters: [],

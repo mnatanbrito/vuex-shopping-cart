@@ -1,17 +1,29 @@
 <template>
   <div class="product">
     <div class="product__discount">
-      <span>-20%</span>
+      <span v-if="product.hasDiscount" class="is-pulled-right">-{{product.discount}}%</span>
     </div>
     <div class="product__thumbnail">
       <img :src="thumbnail" :title="product.name || 'Product Name'" :alt="product.name">
     </div>
 
-    <div class="product__info">{{JSON.stringify(product)}}</div>
+    <div class="product__info has-text-centered">
+      <h2 class="product__brand subtitle has-text-weight-bold is-size-6">{{product.brand}}</h2>
+      <h3 class="subtitle product__name is-size-7">{{product.name}}</h3>
+      <span
+        :class="{'product_price subtitle is-size-7': true, 'has-text-weight-bold': !product.hasDiscount, 'old-price': product.hasDiscount}"
+      >${{product.originalPrice}}</span>
+      &nbsp;&nbsp;
+      <span
+        v-if="product.hasDiscount"
+        class="subtitle is-size-7 has-text-weight-bold"
+      >${{formatNumber(product.originalPrice * (product.discount/100))}}</span>
+    </div>
   </div>
 </template>
 
 <script>
+import { formatNumber } from "../../utils/formatters";
 import thumbnail from "../../assets/thumbnail.png";
 
 export default {
@@ -26,27 +38,31 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    formatNumber: formatNumber
   }
 };
 </script>
 
 <style lang="scss">
 $cardWidth: 250px;
-$cardHeight: 250px;
+$cardHeight: 375px;
 
 .product {
   width: $cardWidth;
   height: $cardHeight;
-  margin-bottom: 85px;
+  padding: 5px;
 
   &:hover {
     cursor: pointer;
+    border: 1pt solid #dedede;
+    border-radius: 5px;
   }
 
   .product__discount {
+    height: 45px;
     span {
-      // position: relative;
-      // right: 20px;
       border: 1pt solid #dedede;
       border-radius: 5px;
       padding: 5px 10px;
@@ -54,54 +70,18 @@ $cardHeight: 250px;
       margin-bottom: 5px;
     }
   }
+
+  .product__info {
+    margin-bottom: 20px;
+    .product__brand,
+    .product__name {
+      margin-bottom: 5px !important;
+    }
+
+    .product_price.old-price {
+      text-decoration: line-through;
+    }
+  }
 }
-
-// .product {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   margin: auto;
-//   width: $cardWidth;
-//   height: $cardHeight;
-//   transition: all 0.2s ease-in-out;
-
-//   &:hover {
-//     font-size: inherit;
-//     transform: scale(1.2, 1.5);
-//     cursor: pointer;
-//     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-//   }
-
-//   .product__discount {
-//     text-align: right;
-//     flex-shrink: 100%;
-//     flex-basis: 100%;
-
-//     span {
-//       position: relative;
-//       right: 20px;
-//       border: 1pt solid #dedede;
-//       border-radius: 5px;
-//       padding: 5px 10px;
-//       display: inline-block;
-//       margin-bottom: 5px;
-//     }
-//   }
-
-//   .product__thumbnail {
-//     flex-basis: 100%;
-//     flex-shrink: 100%;
-
-//     img {
-//       width: 213px;
-//       height: 213px;
-//     }
-//   }
-
-//   .product__info {
-//     flex-basis: 100%;
-//     flex-shrink: 100%;
-//   }
-// }
 </style>
 

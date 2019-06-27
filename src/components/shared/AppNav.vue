@@ -16,9 +16,9 @@
 
     <div id="customNav" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">Home</a>
-        <a class="navbar-item">Outlet</a>
-        <a class="navbar-item">Arrivals</a>
+        <router-link tag="a" to="/" class="navbar-item">Home</router-link>
+        <router-link tag="a" to="/" class="navbar-item">Outlet</router-link>
+        <router-link tag="a" to="/" class="navbar-item">Arrivals</router-link>
       </div>
     </div>
   </nav>
